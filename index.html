@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://losthubi.github.io/index.html">
 <meta property="og:site_name" content="古月斋">
 <meta property="og:description" content="这是一个正经的技术博客">
-<meta property="article:author" content="Hu Bin">
+<meta property="article:author" content="卓昕">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
 
@@ -116,16 +116,6 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories</a>
-
-  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -158,11 +148,11 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://losthubi.github.io/2020/04/07/Audio-Volume-View/">
+    <link itemprop="mainEntityOfPage" href="https://losthubi.github.io/2020/04/07/Android-Volume-View/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hu Bin">
+      <meta itemprop="name" content="卓昕">
       <meta itemprop="description" content="这是一个正经的技术博客">
     </span>
 
@@ -172,7 +162,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/07/Audio-Volume-View/" class="post-title-link" itemprop="url">Audio Volume View</a>
+            <a href="/2020/04/07/Android-Volume-View/" class="post-title-link" itemprop="url">安卓录音控件</a>
         </h2>
 
         <div class="post-meta">
@@ -189,7 +179,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-04-08 13:45:47" itemprop="dateModified" datetime="2020-04-08T13:45:47+08:00">2020-04-08</time>
+                <time title="Modified: 2020-04-08 17:06:56" itemprop="dateModified" datetime="2020-04-08T17:06:56+08:00">2020-04-08</time>
               </span>
 
           
@@ -203,19 +193,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="AudioVolumeView"><a href="#AudioVolumeView" class="headerlink" title="AudioVolumeView"></a>AudioVolumeView</h1><p>安卓录音音量显示控件</p>
-<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p><a href="https://github.com/ws123/VoiceLine" target="_blank" rel="noopener">ws123:VoiceLine</a></p>
-<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><!-- https://static.daojia.com/assets/project/tosimple-pic/preview-capture_1586252054748.png -->
-<p><img src="/images/preview-capture.png" alt></p>
+          <h1 id="安卓录音控件"><a href="#安卓录音控件" class="headerlink" title="安卓录音控件"></a>安卓录音控件</h1><p>安卓录音音量显示控件</p>
 <h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><h3 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h3><p>修改项目的build.gradle文件</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123; </span><br><span class="line">        url <span class="string">"https://dl.bintray.com/loster/maven/"</span> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation <span class="string">"indi.hubi.viewlab:avvlib:1.0.0"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="可设置的属性"><a href="#可设置的属性" class="headerlink" title="可设置的属性"></a>可设置的属性</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"avv"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--矩形块颜色--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"rectColor"</span> <span class="attr">format</span>=<span class="string">"color"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--移动整个控件宽度所需的时间，默认5000ms--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"rectDuration"</span> <span class="attr">format</span>=<span class="string">"integer"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--矩形宽度--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"rectWidth"</span> <span class="attr">format</span>=<span class="string">"dimension"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--矩形之间的间隔--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"rectSpace"</span> <span class="attr">format</span>=<span class="string">"dimension"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--矩形圆角半径--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"rectCorner"</span> <span class="attr">format</span>=<span class="string">"dimension"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--矩形最小高度，小于等于最小音量时，矩形显示此高度--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"rectInitHeight"</span> <span class="attr">format</span>=<span class="string">"dimension"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--所输入音量的最大值--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"maxVolume"</span> <span class="attr">format</span>=<span class="string">"float"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--所输入音量的最小值--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"minVolume"</span> <span class="attr">format</span>=<span class="string">"float"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--移动方向--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"rectOrientation"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 从右向左移动，默认值 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enum</span> <span class="attr">name</span>=<span class="string">"right_to_left"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 从左向右移动 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enum</span> <span class="attr">name</span>=<span class="string">"left_to_right"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">attr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">indi.hubi.viewlab.AudioVolumeView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/avv"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"50dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:maxVolume</span>=<span class="string">"100"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:minVolume</span>=<span class="string">"40"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:rectCorner</span>=<span class="string">"1dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:rectInitHeight</span>=<span class="string">"4dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:rectSpace</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:rectWidth</span>=<span class="string">"2dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:rectOrientation</span>=<span class="string">"right_to_left"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:rectDuration</span>=<span class="string">"10000"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:rectColor</span>=<span class="string">"#FFFFFF"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="动态效果图"><a href="#动态效果图" class="headerlink" title="动态效果图"></a>动态效果图</h3><!-- https://static.daojia.com/assets/project/tosimple-pic/preview_1586252097823.gif -->
-<p><img src="/images/preview.gif" alt></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/07/Android-Volume-View/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -234,11 +222,11 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://losthubi.github.io/2020/04/07/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://losthubi.github.io/2020/04/07/Hello-World/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hu Bin">
+      <meta itemprop="name" content="卓昕">
       <meta itemprop="description" content="这是一个正经的技术博客">
     </span>
 
@@ -248,7 +236,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/07/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2020/04/07/Hello-World/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
         <div class="post-meta">
@@ -258,8 +246,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-04-07 15:31:32" itemprop="dateCreated datePublished" datetime="2020-04-07T15:31:32+08:00">2020-04-07</time>
+              <time title="Created: 2020-04-07 12:57:33" itemprop="dateCreated datePublished" datetime="2020-04-07T12:57:33+08:00">2020-04-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-08 17:09:13" itemprop="dateModified" datetime="2020-04-08T17:09:13+08:00">2020-04-08</time>
+              </span>
 
           
 
@@ -276,16 +271,14 @@
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/07/Hello-World/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -358,7 +351,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Hu Bin</p>
+  <p class="site-author-name" itemprop="name">卓昕</p>
   <div class="site-description" itemprop="description">这是一个正经的技术博客</div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -371,8 +364,9 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">tags</span>
+            <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -402,7 +396,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Hu Bin</span>
+  <span class="author" itemprop="copyrightHolder">卓昕</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
